@@ -1,0 +1,34 @@
+Regular Component-->
+ A regular component does not implement the shouldComponentUpdate method. It always returns true by default.
+
+ Pure Component -->
+ A pure component on the other hand implements shouldComponentUpdate with a shallow props and state comparison.
+
+ When SC of prevState with currentState and SC of prevProps with currentProps finds a difference, then the component is re-rendered.
+ Pure Component gives the performance boost and it blocks the unneccasary renders
+
+ Shallow comparison
+ 1. Primitive types :-
+    a (SC) b returns true if a and b have the same value and are of the same type.
+    Example :- string 'Vishwas' (SC) string 'Vishwas' returns true.
+    (for numbers, string and booleans)
+
+ 2. Complex Types :-
+    (for objects and arrays)
+    a (SC) returns true if a and b reference the exact same object
+
+    Example of Array
+    var a = [1,2,3]
+    var b = [1,2,3]
+    var c = a
+
+    a (SC) b --> false (do not point to the same object)
+    a (SC) c --> true
+
+    Example of Objects
+    var a = { x:1, y:2};
+    var b = {x:1,y:2};
+    var c=a
+
+    var ab_eq = (a===b) --> false
+    var ac_eq = (a===c) --> true

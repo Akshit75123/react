@@ -1,0 +1,31 @@
+Lect-22
+
+Lifecycle Methods -->
+
+four types of Lifecycle methods
+1. Mounting Lifecycle methods -- When an instance of a component is being created and inserted into the DOM.
+four methods are :-
+ a). constructor
+ b). static getDerivedStateFromProps
+ c). render
+ d). componentDidMount
+
+2. Updating Lifecycle methods -- When a component is bring re-rendered as a result of changes to either its props or state
+five methods are :-
+ a). static getDerivedStateFromProps(props, state) - Method is called every time a component is re-rendered, it also set the state
+ b). shouldComponentUpdate(nextProps, nextState) - dictates if the component should re-render or not.
+        used for performance optimization
+        avoid cause side-effects and calling the setState method.
+
+ c). render
+ d). getSnapshotBeforeUpdate(prevProps, prevState)
+ e). componentDidUpdate(prevProps, prevState, snapshot) -- called after the render is finished in the re-render cycles
+        can make ajax calls
+
+3. Unmounting Lifecycle methods -- When a component is being removed from the DOM
+method is componentWillUnmount
+
+4. Error Handling methods -- When there is an error during rendering, in a lifecycle method, or in the constructor of any child of any child component
+methods are -:
+ a). static getDerivedStateFromError
+ b). componentDidCatch
